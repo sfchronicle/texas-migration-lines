@@ -1,4 +1,5 @@
 var ich = require("icanhaz");
+var $ = require("jquery");
 var tooltipTemplate = require("./_tooltipTemplate.html");
 ich.addTemplate("tooltipTemplate", tooltipTemplate);
 
@@ -15,6 +16,7 @@ var counties = [
 
 var years = [1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012];
 var num_years = 16;
+var toggle1 = 1;
 //THERE IS STILL A HARD-CODED VALUE AT 64-65 WHICH YOU SHOULD FIX!!!!
 
 //setting some important variables
@@ -247,3 +249,48 @@ if (canvas) {
   }
 
 }
+
+$(".bay").click(function() {
+    console.log(counties.length);
+    if (toggle1) {
+      for(var i = 0; i < counties.length; i++) {
+        if(counties[i].name == "Bay Total") {
+            counties.splice(i, 1);
+            break;
+        }
+      }
+    } else {
+      counties.push({ name: "Bay Total", color: "#666666" });
+    }
+    console.log(counties.length);
+    canvas.location.reload(true);
+    toggle1 = !toggle1;
+});
+
+$(".alameda").click(function() {
+    console.log( "You clicked on alameda!" );
+});
+
+$(".cc").click(function() {
+    console.log( "You clicked on cc" );
+});
+
+$(".marin").click(function() {
+    console.log( "You clicked on marin" );
+});
+
+$(".sf").click(function() {
+    console.log( "You clicked on sf!" );
+});
+
+$(".sm").click(function() {
+    console.log( "You clicked on sm!" );
+});
+
+$(".sc").click(function() {
+    console.log( "You clicked on sc!" );
+});
+
+$(".solano").click(function() {
+    console.log( "You clicked on solano!" );
+});
