@@ -128,10 +128,8 @@ if (canvas) {
       ctx.beginPath();
       // ctx.strokeStyle = "rgb(" + county.color + ")";
       ctx.strokeStyle = county.color;
-      console.log(county.name);
       if (county.name == "Bay Total") {
         ctx.lineWidth = 3;
-        console.log("at bay area");
       } else {
         ctx.lineWidth = 1.75;
       }
@@ -198,7 +196,7 @@ if (canvas) {
 
       //THIS IS NOT WORKING FIX IT!!!!!
       var tBounds = tooltip.getBoundingClientRect();
-      var y = position.y < (bounds.height/vertical_inc) ? indexHeight : -tBounds.height - indexHeight;
+      var y = position.y < (bounds.height/2) ? indexHeight : -tBounds.height - indexHeight;
       var x = position.x < (bounds.width/2) ? indexHeight : -tBounds.width - indexHeight;
       tooltip.style.top = e.pageY + y + "px";
       tooltip.style.left = e.pageX + x + "px";
