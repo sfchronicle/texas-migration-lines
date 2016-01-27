@@ -51,6 +51,10 @@ canvas {
   cursor: pointer;
 }
 
+.legend-container {
+  margin-bottom: 30px;
+}
+
 .legend-title {
   font-size: 12px;
   font-weight: bold;
@@ -145,10 +149,10 @@ canvas {
   padding-left: 5px;
   padding-right: 5px;
   &.up {
-    color: blue;
+    color: lighten(blue,20%);
   }
   &.down {
-    color: red;
+    color: lighten(red,20%);
   }
 
   @media @mobile {

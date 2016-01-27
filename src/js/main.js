@@ -26,7 +26,7 @@ var num_years = 16;
 
 var vertical_inc = 50;
 var top_percent = 200;
-var num_inc = 9;
+var num_inc = 8;
 var yaxis_label_offset = 40;
 var zero_line = 4; //number of tick marks before zero
 
@@ -63,7 +63,7 @@ if (canvas) {
     ctx.lineWidth = 1;
     ctx.moveTo(leftOffset, topOffset);
     ctx.lineTo(chartWidth + leftOffset, topOffset);
-    for (var i = 1; i < num_inc; i++) {
+    for (var i = 1; i < (num_inc+1); i++) {
       ctx.moveTo(leftOffset,indexHeight*i + topOffset);
       ctx.lineTo(chartWidth + leftOffset, indexHeight * i + topOffset);
     };
@@ -94,7 +94,7 @@ if (canvas) {
     ctx.textBaseline = "middle";
     ctx.textAlign = "right";
     ctx.fillStyle = "rgb(66, 70, 72)";
-    for (var i = 0; i < num_inc; i++) {
+    for (var i = 0; i < (num_inc+1); i++) {
       ctx.fillText(percent, yaxis_label_offset, indexHeight * i + topOffset);
       percent -= vertical_inc;
     };
@@ -106,6 +106,16 @@ if (canvas) {
     ctx.font = "16px helvetica";
     ctx.fillText("Taxable Income (Millions)", -(chartHeight/2 + topOffset), 0);
     ctx.rotate((Math.PI/180)*90);
+
+    //explanatory lines
+    drawArrow(chartWidth-10,indexHeight*(zero_line-1) + topOffset, chartWidth-10, indexHeight*(zero_line-3) + topOffset);
+    drawArrow(yaxis_label_offset+40,indexHeight*(zero_line+1) + topOffset, yaxis_label_offset+40, indexHeight*(zero_line+3) + topOffset);
+
+    //explanatory text
+    ctx.font = "13px helvetica";
+    ctx.fillText("Wealth flowing from Texas to Bay area", chartWidth-50, indexHeight*(zero_line-3.8) + topOffset);
+    ctx.fillText("Wealth flowing from Bay area to Texas", yaxis_label_offset+130, indexHeight*(zero_line+3.3) + topOffset);
+
 
     // data lines
     counties.forEach(function(county) {
@@ -203,4 +213,39 @@ if (canvas) {
     render();
     tooltip.classList.remove("show");
   });
+
+  function drawArrow(fromx, fromy, tox, toy){
+      //variables to be used when creating the arrow
+      var headlen = 3;
+
+      var angle = Math.atan2(toy-fromy,tox-fromx);
+
+      //starting path of the arrow from the start square to the end square and drawing the stroke
+      ctx.beginPath();
+      ctx.moveTo(fromx, fromy);
+      ctx.lineTo(tox, toy);
+      ctx.strokeStyle = "#666666";
+      ctx.lineWidth = 3;
+      ctx.stroke();
+
+      //starting a new path from the head of the arrow to one of the sides of the point
+      ctx.beginPath();
+      ctx.moveTo(tox, toy);
+      ctx.lineTo(tox-headlen*Math.cos(angle-Math.PI/7),toy-headlen*Math.sin(angle-Math.PI/7));
+
+      //path from the side point of the arrow, to the other side point
+      ctx.lineTo(tox-headlen*Math.cos(angle+Math.PI/7),toy-headlen*Math.sin(angle+Math.PI/7));
+
+      //path from the side point back to the tip of the arrow, and then again to the opposite side point
+      ctx.lineTo(tox, toy);
+      ctx.lineTo(tox-headlen*Math.cos(angle-Math.PI/7),toy-headlen*Math.sin(angle-Math.PI/7));
+
+      //draws the paths created above
+      ctx.strokeStyle = "#666666";
+      ctx.lineWidth = 6;
+      ctx.stroke();
+      ctx.fillStyle = "#666666";
+      ctx.fill();
+  }
+
 }
