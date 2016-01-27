@@ -1,0 +1,129 @@
+Year,County,NetAGI,NetAGI_Adj,NetReturns
+1997,Alameda County,-9946,,-39
+1998,Alameda County,1155,,-104
+1999,Alameda County,9072,,109
+2000,Alameda County,46991,,191
+2001,Alameda County,-23762,,-337
+2002,Alameda County,-14674,,-155
+2003,Alameda County,-22435,,-226
+2004,Alameda County,-28337,,-324
+2005,Alameda County,-34974,,-355
+2006,Alameda County,-23067,,-340
+2007,Alameda County,-38857,,-145
+2008,Alameda County,-17293,,-230
+2009,Alameda County,-10769,,-169
+2010,Alameda County,-21915,,-105
+2011,Alameda County,-10031,,-113
+2012,Alameda County,-32407,,-188
+1997,Bay Total,-15,22,310
+1998,Bay Total,1230,"1,790",-106
+1999,Bay Total,22417,"31,934",419
+2000,Bay Total,114122,"157,289",888
+2001,Bay Total,-109393,"-146,600",-1307
+2002,Bay Total,-82166,"-108,398",-607
+2003,Bay Total,-62724,"-80,905",-843
+2004,Bay Total,-102806,"-129,166",-748
+2005,Bay Total,-112915,"-137,218",-1086
+2006,Bay Total,-111315,"-131,046",-1210
+2007,Bay Total,-22626,"-25,899",-385
+2008,Bay Total,-62283,"-68,656",-739
+2009,Bay Total,-53319,"-58,985",-650
+2010,Bay Total,-94852,"-103,238",-312
+2011,Bay Total,-19295,"-20,358",17
+2012,Bay Total,-198580,"-205,276",-489
+1997,Contra Costa County,-14575,,-13
+1998,Contra Costa County,-21031,,-83
+1999,Contra Costa County,-10385,,-63
+2000,Contra Costa County,8613,,-31
+2001,Contra Costa County,-20821,,-114
+2002,Contra Costa County,7102,,-13
+2003,Contra Costa County,-22406,,-179
+2004,Contra Costa County,-20689,,-192
+2005,Contra Costa County,-27524,,-274
+2006,Contra Costa County,-11624,,-239
+2007,Contra Costa County,30734,,-38
+2008,Contra Costa County,-6120,,-111
+2009,Contra Costa County,-13547,,-178
+2010,Contra Costa County,-17351,,-109
+2011,Contra Costa County,3247,,-151
+2012,Contra Costa County,-89747,,-240
+1997,Marin County,8575,,25
+1998,Marin County,2467,,8
+1999,Marin County,2771,,28
+2000,Marin County,1605,,38
+2001,Marin County,-1227,,-5
+2002,Marin County,-4494,,-11
+2003,Marin County,-3061,,-20
+2004,Marin County,-4040,,-18
+2005,Marin County,6965,,15
+2006,Marin County,-1423,,-5
+2007,Marin County,3200,,-16
+2008,Marin County,-2915,,-10
+2009,Marin County,1104,,-19
+2010,Marin County,-224,,-3
+2011,Marin County,-7405,,-25
+2012,Marin County,6426,,-4
+1997,San Francisco County,19249,,189
+1998,San Francisco County,15974,,163
+1999,San Francisco County,20791,,267
+2000,San Francisco County,28594,,298
+2001,San Francisco County,-11243,,-73
+2002,San Francisco County,-28812,,21
+2003,San Francisco County,29262,,59
+2004,San Francisco County,-3388,,66
+2005,San Francisco County,-1545,,75
+2006,San Francisco County,-720,,76
+2007,San Francisco County,1300,,42
+2008,San Francisco County,-6498,,0
+2009,San Francisco County,-10140,,-97
+2010,San Francisco County,-2146,,21
+2011,San Francisco County,1577,,198
+2012,San Francisco County,-21992,,133
+1997,San Mateo County,2697,,52
+1998,San Mateo County,-3063,,-17
+1999,San Mateo County,-6840,,57
+2000,San Mateo County,9905,,106
+2001,San Mateo County,-4914,,-99
+2002,San Mateo County,-7348,,-55
+2003,San Mateo County,-6992,,-53
+2004,San Mateo County,-3904,,13
+2005,San Mateo County,-13073,,-83
+2006,San Mateo County,-19433,,-122
+2007,San Mateo County,2352,,-51
+2008,San Mateo County,-8693,,-92
+2009,San Mateo County,-4046,,-50
+2010,San Mateo County,-11497,,-89
+2011,San Mateo County,-3186,,-16
+2012,San Mateo County,-41226,,-78
+1997,Santa Clara County,-5879,,88
+1998,Santa Clara County,8359,,-41
+1999,Santa Clara County,8043,,29
+2000,Santa Clara County,17279,,266
+2001,Santa Clara County,-45633,,-685
+2002,Santa Clara County,-32747,,-400
+2003,Santa Clara County,-32865,,-357
+2004,Santa Clara County,-35101,,-203
+2005,Santa Clara County,-37403,,-371
+2006,Santa Clara County,-41695,,-390
+2007,Santa Clara County,-19158,,-160
+2008,Santa Clara County,-14378,,-234
+2009,Santa Clara County,-13891,,-111
+2010,Santa Clara County,-42193,,-46
+2011,Santa Clara County,3199,,210
+2012,Santa Clara County,-14909,,-74
+1997,Solano County,-136,,8
+1998,Solano County,-2631,,-32
+1999,Solano County,-1035,,-8
+2000,Solano County,1135,,20
+2001,Solano County,-1793,,6
+2002,Solano County,-1193,,6
+2003,Solano County,-4227,,-67
+2004,Solano County,-7347,,-90
+2005,Solano County,-5361,,-93
+2006,Solano County,-13353,,-190
+2007,Solano County,-2197,,-17
+2008,Solano County,-6386,,-62
+2009,Solano County,-2030,,-26
+2010,Solano County,474,,19
+2011,Solano County,-6696,,-86
+2012,Solano County,-4725,,-38

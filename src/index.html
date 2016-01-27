@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <%= t.include("partials/_head.html") %>
+  </head>
+  <body>
+
+    <responsive-child class="container">
+
+      <div class="outermost">
+        <div class="hed">Moving to Texas</div>
+        <div class="chatter">In past years, Californians have flocked to Seattle for cheaper homes and an SF-like situation. Now Califorians are more and more abandoning the city for Texas. Here is what all these complicated numbers mean which you will have trouble understanding.</div>
+        <div class="tooltip"></div>
+
+        <canvas width=620 height=320></canvas>
+        <div class="legend-title">Wealth flow (by county)</div>
+        <div class="legend">
+          <div class="low-low swatch key"></div>
+          <div class="low swatch key"></div>
+          <div class="low-med swatch key"></div>
+          <div class="med swatch key"></div>
+          <div class="med-high swatch key"></div>
+          <div class="high swatch key"></div>
+          <div class="high-high swatch key"></div>
+          <div class="sum swatch key"></div>
+        </div>
+        <div class="legend">
+          <div class="key">Bay Total</div>
+          <div class="key">Alameda</div>
+          <div class="key">Contra Costa</div>
+          <div class="key">Marin</div>
+          <div class="key">San Francisco</div>
+          <div class="key">San Mateo</div>
+          <div class="key">Santa Clara</div>
+          <div class="key">Solano</div>
+        </div>
+        <div class="source"><em>
+          Note: INSERT NOTE?<br>
+          Source: IRS SOMETHING</em>
+        </div>
+        <div class="credit">PEOPLE / The San Francisco Chronicle</div>
+      </div>
+    </responsive-child>
+
+    <script>
+    <%
+      var years = [1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012];
+      var data = {};
+      csv.AGI.forEach(function(row) {
+        var obj = {};
+        years.forEach(function(year) {
+          obj[year] = {
+            AGI: row[year]
+          };
+        });
+        data[row.county] = obj;
+      });
+      csv.AGI_adj_K.forEach(function(row) {
+        years.forEach(function(year) {
+          data[row.county][year].percent = row[year];
+        });
+      });
+    %>
+    var MigrationData = <%= JSON.stringify(data) %>
+    console.log(MigrationData);
+  </script>
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_foot.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>
