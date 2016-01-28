@@ -122,6 +122,7 @@ if (canvas) {
 
     //explanatory text
     ctx.font = "13px helvetica";
+    ctx.strokeStyle = 'rgb(0, 0, 0)';
     ctx.fillText("Wealth flowing from Texas to Bay area", chartWidth-70, indexHeight*(zero_line-3.8) + topOffset);
     ctx.fillText("Wealth flowing from Bay area to Texas", yaxis_label_offset+130, indexHeight*(zero_line+3.3) + topOffset);
 
