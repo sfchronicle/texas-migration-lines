@@ -5,18 +5,25 @@ ich.addTemplate("tooltipTemplate", tooltipTemplate);
 
 var counties = [
   { name: "Bay Total", color: "#666666" },
-  { name: "Alameda", color: "#69AF7E" },
-  { name: "Contra Costa", color: "#44AFA8" },
-  { name: "Marin", color: "#68B0AB" },
-  { name: "San Francisco", color: "#72BF9B" },
-  { name: "San Mateo", color: "#8FC0A9" },
-  { name: "Santa Clara", color: "#C8D5B9" },
-  { name: "Solano", color: "#F9EEC5" }
+  // { name: "Alameda", color: "#69AF7E" },
+  // { name: "Contra Costa", color: "#44AFA8" },
+  // { name: "Marin", color: "#68B0AB" },
+  // { name: "San Francisco", color: "#72BF9B" },
+  // { name: "San Mateo", color: "#8FC0A9" },
+  // { name: "Santa Clara", color: "#C8D5B9" },
+  // { name: "Solano", color: "#F9EEC5" }
 ];
 
 var years = [1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012];
 var num_years = 16;
 var toggle1 = 1;
+var toggle2 = 0;
+var toggle3 = 0;
+var toggle4 = 0;
+var toggle5 = 0;
+var toggle6 = 0;
+var toggle7 = 0;
+var toggle8 = 0;
 //THERE IS STILL A HARD-CODED VALUE AT 64-65 WHICH YOU SHOULD FIX!!!!
 
 //setting some important variables
@@ -37,7 +44,7 @@ var zero_line = 4; //number of tick marks before zero
 
 var width = 620;
 var height = 320;
-var leftOffset = 65;
+var leftOffset = 50;
 var topOffset = 5;
 var chartHeight = 280;
 var chartWidth = width - leftOffset;
@@ -115,7 +122,7 @@ if (canvas) {
 
     //explanatory text
     ctx.font = "13px helvetica";
-    ctx.fillText("Wealth flowing from Texas to Bay area", chartWidth-50, indexHeight*(zero_line-3.8) + topOffset);
+    ctx.fillText("Wealth flowing from Texas to Bay area", chartWidth-70, indexHeight*(zero_line-3.8) + topOffset);
     ctx.fillText("Wealth flowing from Bay area to Texas", yaxis_label_offset+130, indexHeight*(zero_line+3.3) + topOffset);
 
 
@@ -251,7 +258,6 @@ if (canvas) {
 }
 
 $(".bay").click(function() {
-    console.log(counties.length);
     if (toggle1) {
       for(var i = 0; i < counties.length; i++) {
         if(counties[i].name == "Bay Total") {
@@ -262,35 +268,111 @@ $(".bay").click(function() {
     } else {
       counties.push({ name: "Bay Total", color: "#666666" });
     }
-    console.log(counties.length);
-    canvas.location.reload(true);
+    render();
     toggle1 = !toggle1;
 });
 
 $(".alameda").click(function() {
-    console.log( "You clicked on alameda!" );
+  if (toggle2) {
+    for(var i = 0; i < counties.length; i++) {
+      if(counties[i].name == "Alameda") {
+          counties.splice(i, 1);
+          break;
+      }
+    }
+  } else {
+    counties.push({ name: "Alameda", color: "#69AF7E" });
+  }
+  render();
+  toggle2 = !toggle2;
 });
 
 $(".cc").click(function() {
-    console.log( "You clicked on cc" );
+  if (toggle3) {
+    for(var i = 0; i < counties.length; i++) {
+      if(counties[i].name == "Contra Costa") {
+          counties.splice(i, 1);
+          break;
+      }
+    }
+  } else {
+    counties.push({ name: "Contra Costa", color: "#44AFA8" });
+  }
+  render();
+  toggle3 = !toggle3;
 });
 
 $(".marin").click(function() {
-    console.log( "You clicked on marin" );
+  if (toggle4) {
+    for(var i = 0; i < counties.length; i++) {
+      if(counties[i].name == "Marin") {
+          counties.splice(i, 1);
+          break;
+      }
+    }
+  } else {
+    counties.push({ name: "Marin", color: "#68B0AB" });
+  }
+  render();
+  toggle4 = !toggle4;
 });
 
 $(".sf").click(function() {
-    console.log( "You clicked on sf!" );
+  if (toggle5) {
+    for(var i = 0; i < counties.length; i++) {
+      if(counties[i].name == "San Francisco") {
+          counties.splice(i, 1);
+          break;
+      }
+    }
+  } else {
+    counties.push({ name: "San Francisco", color: "#72BF9B" });
+  }
+  render();
+  toggle5 = !toggle5;
 });
 
 $(".sm").click(function() {
-    console.log( "You clicked on sm!" );
+  if (toggle6) {
+    for(var i = 0; i < counties.length; i++) {
+      if(counties[i].name == "San Mateo") {
+          counties.splice(i, 1);
+          break;
+      }
+    }
+  } else {
+    counties.push({ name: "San Mateo", color: "#8FC0A9" });
+  }
+  render();
+  toggle6 = !toggle6;
 });
 
 $(".sc").click(function() {
-    console.log( "You clicked on sc!" );
+  if (toggle7) {
+    for(var i = 0; i < counties.length; i++) {
+      if(counties[i].name == "Santa Clara") {
+          counties.splice(i, 1);
+          break;
+      }
+    }
+  } else {
+    counties.push({ name: "Santa Clara", color: "#C8D5B9" });
+  }
+  render();
+  toggle7 = !toggle7;
 });
 
 $(".solano").click(function() {
-    console.log( "You clicked on solano!" );
+  if (toggle8) {
+    for(var i = 0; i < counties.length; i++) {
+      if(counties[i].name == "Solano") {
+          counties.splice(i, 1);
+          break;
+      }
+    }
+  } else {
+    counties.push({ name: "Solano", color: "#F9EEC5" });
+  }
+  render();
+  toggle8 = !toggle8;
 });
