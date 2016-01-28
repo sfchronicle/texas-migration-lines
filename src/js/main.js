@@ -4,7 +4,7 @@ var tooltipTemplate = require("./_tooltipTemplate.html");
 ich.addTemplate("tooltipTemplate", tooltipTemplate);
 
 var counties = [
-  { name: "Bay Total", color: "#666666" },
+  { name: "Bay Area Total", color: "#666666" },
   // { name: "Alameda", color: "#69AF7E" },
   // { name: "Contra Costa", color: "#44AFA8" },
   // { name: "Marin", color: "#68B0AB" },
@@ -139,7 +139,7 @@ if (canvas) {
       ctx.beginPath();
       // ctx.strokeStyle = "rgb(" + county.color + ")";
       ctx.strokeStyle = county.color;
-      if (county.name == "Bay Total") {
+      if (county.name == "Bay Area Total") {
         ctx.lineWidth = 3;
       } else {
         ctx.lineWidth = 1.75;
@@ -261,7 +261,7 @@ if (canvas) {
 $(".bay").click(function() {
     if (toggle1) {
       for(var i = 0; i < counties.length; i++) {
-        if(counties[i].name == "Bay Total") {
+        if(counties[i].name == "Bay Area Total") {
             counties.splice(i, 1);
             break;
         }
