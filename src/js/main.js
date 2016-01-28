@@ -88,10 +88,10 @@ if (canvas) {
     // year labels
     var i = indexWidth/2 + leftOffset;
     //ctx.font = "bold 14px helvetica";
-    ctx.font ="14px helvetica";
+    ctx.font ="13px helvetica";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
-    ctx.fillStyle = "rgb(66, 70, 72)";
+    ctx.fillStyle = "#000000";
     years.forEach(function(year){
       ctx.fillText(year, i, height - 18); //WHAT IS THIS "18"??????????
       i += indexWidth;
@@ -99,10 +99,10 @@ if (canvas) {
 
     // percent labels
     var percent = top_percent;
-    ctx.font = "12px helvetica";
+    ctx.font = "13px helvetica";
     ctx.textBaseline = "middle";
     ctx.textAlign = "right";
-    ctx.fillStyle = "rgb(66, 70, 72)";
+    ctx.fillStyle = "#000000";
     for (var i = 0; i < (num_inc+1); i++) {
       ctx.fillText(percent, yaxis_label_offset, indexHeight * i + topOffset);
       percent -= vertical_inc;
@@ -112,7 +112,8 @@ if (canvas) {
     ctx.rotate(-(Math.PI/180)*90);
     ctx.textBaseline = "top";
     ctx.textAlign = "center";
-    ctx.font = "16px helvetica";
+    ctx.strokeStyle = "#000000";
+    ctx.font = "12px helvetica";
     ctx.fillText("Taxable Income (Millions)", -(chartHeight/2 + topOffset), 0);
     ctx.rotate((Math.PI/180)*90);
 
@@ -122,9 +123,9 @@ if (canvas) {
 
     //explanatory text
     ctx.font = "13px helvetica";
-    ctx.strokeStyle = 'rgb(0, 0, 0)';
-    ctx.fillText("Wealth flowing from Texas to Bay area", chartWidth-70, indexHeight*(zero_line-3.8) + topOffset);
-    ctx.fillText("Wealth flowing from Bay area to Texas", yaxis_label_offset+130, indexHeight*(zero_line+3.3) + topOffset);
+    ctx.strokeStyle = "#000000";
+    ctx.fillText("Wealth flowing from Texas to Bay Area", chartWidth-70, indexHeight*(zero_line-3.8) + topOffset);
+    ctx.fillText("Wealth flowing from Bay Area to Texas", yaxis_label_offset+130, indexHeight*(zero_line+3.3) + topOffset);
 
 
     // data lines
@@ -204,7 +205,6 @@ if (canvas) {
 
       tooltip.innerHTML = ich.tooltipTemplate({year: year, data: values});
 
-      //THIS IS NOT WORKING FIX IT!!!!!
       var tBounds = tooltip.getBoundingClientRect();
       var y = position.y < (bounds.height/2) ? indexHeight : -tBounds.height - indexHeight;
       var x = position.x < (bounds.width/2) ? indexHeight : -tBounds.width - indexHeight;
@@ -232,8 +232,8 @@ if (canvas) {
       ctx.beginPath();
       ctx.moveTo(fromx, fromy);
       ctx.lineTo(tox, toy);
-      ctx.strokeStyle = "#666666";
-      ctx.lineWidth = 3;
+      ctx.strokeStyle = "#000000";
+      ctx.lineWidth = 2.5;
       ctx.stroke();
 
       //starting a new path from the head of the arrow to one of the sides of the point
@@ -249,10 +249,10 @@ if (canvas) {
       ctx.lineTo(tox-headlen*Math.cos(angle-Math.PI/7),toy-headlen*Math.sin(angle-Math.PI/7));
 
       //draws the paths created above
-      ctx.strokeStyle = "#666666";
+      ctx.strokeStyle = "#000000";
       ctx.lineWidth = 6;
       ctx.stroke();
-      ctx.fillStyle = "#666666";
+      ctx.fillStyle = "#000000";
       ctx.fill();
   }
 
