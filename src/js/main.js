@@ -196,7 +196,7 @@ if (canvas) {
             percent: formattedPercent,
             up: up,
             down: down,
-            bold: county.name == "Bay Total"
+            bold: county.name == "Bay Area Total"
           });
         }
       });
@@ -267,7 +267,7 @@ $(".bay").click(function() {
         }
       }
     } else {
-      counties.push({ name: "Bay Total", color: "#666666" });
+      counties.push({ name: "Bay Area Total", color: "#666666" });
     }
     render();
     toggle1 = !toggle1;
